@@ -84,6 +84,7 @@ export const logout = (req, res) => {
 
 export const updateProfile = async (req, res) => {
     try {
+        const { profilePic } = req.body;
         const userId = req.user._id;
 
         if (!profilePic) {
@@ -104,7 +105,7 @@ export const updateProfile = async (req, res) => {
     }
 }
 
-export const checkAuth =  (req, res) => {
+export const checkAuth = (req, res) => {
     try {
         res.status(200).json(req.user);
     } catch (error) {
