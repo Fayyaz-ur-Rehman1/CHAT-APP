@@ -5,10 +5,10 @@ import { SettingsPage } from "./pages/SettingsPage"
 import { ProfilePage } from './pages/ProfilePage';
 import { Navbar } from './components/Navbar';
 
-import React, { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useAuthStore } from './store/useAuthStore';
 import { useThemeStore } from './store/useThemeStore';
+import { useEffect } from 'react';
 
 import { Loader } from "lucide-react";
 import { Toaster } from 'react-hot-toast';
@@ -22,7 +22,6 @@ function App() {
     checkAuth();
   }, [checkAuth])
 
-  console.log({ authUser });
 
   if (isCheckingAuth && !authUser) return (
     <div className="flex items-center justify-center h-screen">
